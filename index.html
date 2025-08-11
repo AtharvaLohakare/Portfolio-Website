@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfolio of Atharva Lohakare - Full Stack Developer">
+    <meta name="author" content="Atharva Lohakare">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body onload="loadfunction()">
+
+    <div class="preloader">
+        <div id="loader"></div>
+    </div>
+
+    <header>
+
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Atharva</h2>
+            </div>
+
+            <!-- ===================================================================== -->
+
+            <input type="checkbox" name="" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fa fa-bars"></i>
+            </label>
+
+            <!-- ===================================================================== -->
+
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <!-- <li><a href="#resume">Resume</a></li> -->
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">contact</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- ==========================home section==================== -->
+
+    <section class="home" id="home">
+
+        <div class="home-content">
+
+            <div class="home-left-content">
+                <h3>Hello, I'm</h3>
+                <h1>Atharva Lohakare</h1>
+                <h2>And I'm a <span class="multiple-text"></span></h2>
+
+                <p class="description">
+                    Passionate web developer crafting beautiful and functional digital experiences.
+                    Let's build something amazing together!
+                </p>
+
+                <div class="social-media">
+                    <a href="https://github.com/AtharvaLohakare"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.instagram.com/atharva_lohakare12?igsh=NHo0YTRnMXk5dGps"><i
+                            class='bx bxl-instagram-alt'></i></a>
+                    <a
+                        href="https://www.linkedin.com/in/atharva-lohakare-324211379?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                            class='bx bxl-linkedin'></i></a>
+                </div>
+
+
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary-btn">Get in Touch</a>
+                    <a href="#cv" class="btn secondary-btn">Start Scrolling</a>
+                </div>
+
+            </div>
+
+            <div class="home-right-content">
+                <img src="developer.png" alt="Illustration of a web developer at work">
+
+            </div>
+
+        </div>
+
+        <hr class="section-divider">
+
+
+        <div class="quick-info">
+            <h4>What I Do !</h4>
+            <ul>
+                <li class="left-to-right"><i class='bx bx-code-alt'></i> Front-End Web Development</li>
+                <li class="right-to-left"><i class='bx bx-server'></i> Back-End Development</li>
+                <li class="left-to-right"><i class='bx bx-git-branch'></i> Version Control (Git & GitHub)</li>
+            </ul>
+
+
+        </div>
+    </section>
+    <!-- ============================================================================================================================================================================================================================================== -->
+
+    <!-- ======================================================about section============================================================== -->
+    <section class="about" id="about">
+
+        <div class="about-content">
+            <div class="about-left-content">
+                <img src="photo.jpeg" alt="">
+            </div>
+
+            <div class="about-right-content">
+                <h3>About <span>Me!</span></h3>
+                <h2>Atharva Lohakare </h2>
+                <div class="main-content">
+                    <p>Hey! I’m Atharva Lohakare — a curious and passionate Web Designer who thrives on transforming
+                        ideas into interactive, real-world digital experiences. I specialize in crafting responsive,
+                        visually engaging websites that are not only user-friendly, but also fast, accessible, and
+                        reliable. </p>
+                    <p>
+                        I love building clean, responsive websites that not only look great but also
+                        work
+                        seamlessly. Whether I’m crafting a sleek front-end or diving into back-end logic, I find joy in
+                        solving problems and constantly improving my skills. Web development isn’t just my job — it’s
+                        something I genuinely enjoy and explore every day.
+                    </p>
+                    <p>
+                        I’m always experimenting with new tools, learning the latest technologies, and finding better
+                        ways
+                        to bring creative concepts to life. For me, coding is a mix of logic, design, and a bit of art —
+                        and
+                        that’s what keeps it exciting.
+                    </p>
+                    <p>
+                        When I’m not coding, you’ll find me diving into personal projects, exploring new tech, or
+                        learning more about the latest trends in the industry. I believe that the best solutions come
+                        from curiosity and creativity, and I’m always looking for opportunities to combine both in my
+                        work.
+                    </p>
+                    <p>
+                        Thanks for visiting, and I’m excited about the possibility of building something amazing
+                        together!</p>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="about-section-divider">
+
+    </section>
+
+    <!-- ==================================================================================================================================================================================================== -->
+
+    <!-- ======================================================projects section============================================================== -->
+
+    <section class="project" id="project">
+
+
+        <div class="project-coming-soon">
+            <h3>Projects</h3>
+            <div class="coming-soon-box">
+                <i class="fa fa-hourglass-half"></i>
+                <h2>Coming Soon</h2>
+                <p>Exciting new projects are underway—check back soon!</p>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <!-- ==================================================================================================================================================================================================== -->
+
+    <!-- ======================================================contact section============================================================== -->
+    <section class="contact" id="contact">
+        <h3>Contact <span>Me!</span></h3>
+        <!-- <h2>I'll glad to answer your questions</h2> -->
+        <h2 class="contact-h2">Let's Create Something Amazing Together</h2>
+
+
+        <form class="contact-form" method="post" name="Website-Data" id="myForm"
+            action="https://script.google.com/macros/s/AKfycbyh9eqcCqEXT6oGztgPjKAG48XdfLjqQn_YQLbe29Hw7Woe07KpHSvQvQz5-EjVn5xV/exec">
+            <div class="input-box">
+                <input type="text" placeholder="Your Name" name="Name" required>
+                <!-- <i class='bx bx-user'></i> -->
+            </div>
+
+            <div class="input-box">
+                <input type="email" placeholder="Your Email" name="Email" required>
+                <!-- <i class='bx bx-envelope'></i> -->
+            </div>
+
+            <div class="input-box">
+                <textarea rows="5" placeholder="Your Message" name="Message" required></textarea>
+                <!-- <i class='bx bx-message'></i> -->
+            </div>
+
+            <div class="submit-btn">
+                <button type="submit" class="contact-btn">Send Message</button>
+                <div class="success-message" id="successMessage">
+                    <div class="popup " id="popup">
+                        <h2>thank <span> you! </span></h2>
+                        <p>Your details has been successfully submited</p>
+                        <button type="button" onclick="closePopup()">OK</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-branding">
+                <h2>Atharva Lohakare</h2>
+                <p>Creating digital experiences that are clean, responsive, and meaningful. Let’s build something
+                    great
+                    together.</p>
+            </div>
+
+            <div class="footer-social">
+                <h4>Connect with <span>Me</span></h4>
+                <div class="social-icons">
+                    <a href="https://github.com/AtharvaLohakare"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Made with ❤️ by Atharva Lohakare &mdash; &copy; 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+</body>
+
+</html>
