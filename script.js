@@ -73,30 +73,45 @@ ScrollReveal().reveal('.coming-soon-box ', { origin: 'bottom' });
 // ===========================================================================================================================================================================
 // ===================Google sheet form===================
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyh9eqcCqEXT6oGztgPjKAG48XdfLjqQn_YQLbe29Hw7Woe07KpHSvQvQz5-EjVn5xV/exec'
-const form = document.forms['Website-Data']
+/* ================= CONTACT FORM SUBMISSION ================= */
 
-form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(() => { window.location.reload(); })
-})
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw6DRbo0s7YM7ZIahuEbYCLGwXp8DW4gAjmTe2Gw8VOGHDNUFULNQOyCVNMg_A4TJfj7w/exec';
 
-//===========================================================================================================================================================================
-document.getElementById("myForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
-    // Simulate submission process (for demonstration purposes)
-    setTimeout(function () {
-        document.getElementById("myForm").reset(); // Reset form fields
-        document.getElementById("successMessage").style.display = "block"; // Show success message
-        // setTimeout(function () {
-        //     document.getElementById("successMessage").style.display = "none"; // Hide success message after 3 seconds
-        // }, 2000);
-    }, 500); // Simulate 2 seconds of processing time
+const form = document.getElementById('myForm');
+const submitButton = document.getElementById('contactSubmit');
+const formStatus = document.getElementById('formStatus');
+const successMessage = document.getElementById('successMessage');
+
+form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    submitButton.disabled = true;
+    submitButton.querySelector('span').textContent = 'Sending...';
+    formStatus.textContent = '';
+
+    try {
+        await fetch(scriptURL, {
+            method: 'POST',
+            body: new FormData(form)
+        });
+
+        form.reset();
+        successMessage.classList.add('show');
+
+    } catch (error) {
+        formStatus.textContent = 'Something went wrong. Please try again.';
+        console.error('Contact form error:', error);
+
+    } finally {
+        submitButton.disabled = false;
+        submitButton.querySelector('span').textContent = 'Send Message';
+    }
 });
+
 function closePopup() {
-    document.getElementById("successMessage").style.display = "none";
+    successMessage.classList.remove('show');
 }
+
 // ================================================================================================
 // ================================================================================================
 // popup Submit btn Animation
