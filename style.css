@@ -3130,7 +3130,7 @@ body.is-loading {
 
     box-shadow: 0 0 15px #984ddf;
 
-    animation: preloaderLoading 2s ease forwards;
+    transition: width 0.04s linear;
 }
 
 .preloader-bottom {
