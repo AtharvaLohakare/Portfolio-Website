@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body onload="loadfunction()">
+<body class="is-loading">
 
 
 
@@ -20,9 +20,37 @@
     <!-- Custom cursor (desktop only) -->
     <div class="custom-cursor" id="customCursor"></div>
 
-    <div class="preloader">
-        <div id="loader"></div>
+
+
+    <!-- ================================= -->
+    <!-- Cinematic Portfolio Preloader -->
+    <div class="cinematic-preloader" id="cinematicPreloader" role="status" aria-label="Loading portfolio">
+
+        <div class="preloader-content">
+
+            <div class="preloader-logo">AL<span>.</span></div>
+
+            <h2>ATHARVA LOHAKARE</h2>
+
+            <p class="preloader-subtitle">
+                ASPIRING AI DEVELOPER
+            </p>
+
+            <div class="preloader-line">
+                <div class="preloader-progress" id="preloaderProgress"></div>
+            </div>
+
+            <div class="preloader-bottom">
+                <span>INITIALIZING EXPERIENCE</span>
+                <span id="preloaderPercentage">00%</span>
+            </div>
+
+        </div>
+
+        <div class="preloader-glow"></div>
     </div>
+
+    <!-- ===================================== -->
 
     <header>
 
@@ -226,6 +254,107 @@
     </section>
 
     <!-- ==================================================================================================================================================================================================== -->
+
+
+
+    <!-- ================= MY JOURNEY / SCROLL STORYTELLING ================= -->
+    <section class="story-section" id="journey">
+
+        <div class="story-heading">
+            <span class="story-eyebrow">MY JOURNEY SO FAR</span>
+            <h2>Learning. Building. <span>Growing.</span></h2>
+            <p>Every step is part of becoming the developer I want to be.</p>
+        </div>
+
+        <div class="story-layout">
+
+            <div class="story-intro">
+                <span class="story-label">THE STORY</span>
+                <h3>Curiosity turned into a journey.</h3>
+                <p>
+                    From writing my first lines of code to exploring
+                    Artificial Intelligence, I'm continuously learning,
+                    experimenting, and building.
+                </p>
+                <div class="story-scroll-hint">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    <span>Scroll to explore</span>
+                </div>
+            </div>
+
+            <div class="story-timeline" id="storyTimeline">
+
+                <div class="story-track">
+                    <span class="story-track-progress" id="storyProgress"></span>
+                </div>
+
+                <article class="story-card">
+                    <span class="story-number">01</span>
+                    <span class="story-date">2023</span>
+                    <h3>The Beginning</h3>
+                    <p>
+                        Completed my Class 10 education and began discovering
+                        my interests, strengths, and curiosity about technology.
+                    </p>
+                    <div class="story-tags">
+                        <span>Curiosity</span>
+                        <span>Learning</span>
+                    </div>
+                </article>
+
+                <article class="story-card">
+                    <span class="story-number">02</span>
+                    <span class="story-date">2025</span>
+                    <h3>Choosing Technology</h3>
+                    <p>
+                        Completed Class 12 in Computer Science and started
+                        my B.Tech journey in Computer Science and Engineering,
+                        specializing in AI & Machine Learning.
+                    </p>
+                    <div class="story-tags">
+                        <span>Computer Science</span>
+                        <span>AI & ML</span>
+                    </div>
+                </article>
+
+                <article class="story-card">
+                    <span class="story-number">03</span>
+                    <span class="story-date">2025 – Present</span>
+                    <h3>Learning by Building</h3>
+                    <p>
+                        Started exploring Python, web technologies, databases,
+                        and AI concepts while turning ideas into practical
+                        projects.
+                    </p>
+                    <div class="story-tags">
+                        <span>Python</span>
+                        <span>HTML & CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </article>
+
+                <article class="story-card">
+                    <span class="story-number">04</span>
+                    <span class="story-date">The Road Ahead</span>
+                    <h3>Exploring What's Next</h3>
+                    <p>
+                        Continuing to explore Machine Learning, Generative AI,
+                        and Large Language Models with the goal of building
+                        meaningful intelligent applications.
+                    </p>
+                    <div class="story-tags">
+                        <span>Generative AI</span>
+                        <span>Machine Learning</span>
+                        <span>Growth</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <!-- ================= END MY JOURNEY ================= -->
+
+
 
     <!-- ======================================================skills section============================================================== -->
 
@@ -702,6 +831,80 @@
     <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
         <i class='bx bx-up-arrow-alt'></i>
     </button>
+
+
+
+
+
+
+<!-- AI Portfolio Assistant -->
+
+<button class="ai-chat-launcher" id="aiChatLauncher"
+    type="button" aria-label="Open AI portfolio assistant">
+    <i class="fas fa-robot"></i>
+    <span class="ai-chat-status"></span>
+</button>
+
+<div class="ai-chat-panel" id="aiChatPanel" aria-label="Portfolio assistant" aria-hidden="true">
+
+    <div class="ai-chat-header">
+        <div class="ai-chat-avatar">
+            <i class="fas fa-robot"></i>
+        </div>
+
+        <div class="ai-chat-title">
+            <h3>Atharva's AI Assistant</h3>
+            <span><span class="ai-online-dot"></span> Online · Portfolio Guide</span>
+        </div>
+
+        <button type="button" id="aiChatClose" aria-label="Close chat">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="ai-chat-messages" id="aiChatMessages" aria-live="polite">
+
+        <div class="ai-message assistant-message">
+            <div class="ai-message-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="ai-message-content">
+                Hey there! 👋 I'm Atharva's portfolio assistant.
+                Ask me about his skills, projects, education, or interests!
+            </div>
+        </div>
+
+        <div class="ai-suggestions" id="aiSuggestions">
+            <button type="button" class="ai-suggestion">Tell me about Atharva</button>
+            <button type="button" class="ai-suggestion">What are his skills?</button>
+            <button type="button" class="ai-suggestion">Show me his projects</button>
+            <button type="button" class="ai-suggestion">What is his education?</button>
+        </div>
+
+    </div>
+
+    <form class="ai-chat-input-area" id="aiChatForm">
+        <input
+            type="text"
+            id="aiChatInput"
+            placeholder="Ask me anything..."
+            autocomplete="off"
+            maxlength="300"
+            aria-label="Ask the portfolio assistant"
+            required
+        >
+
+        <button type="submit" aria-label="Send message">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </form>
+
+    <div class="ai-chat-footer">
+        Portfolio Assistant · Powered by portfolio knowledge
+    </div>
+
+</div>
+
 
 
 
