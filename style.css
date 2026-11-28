@@ -948,8 +948,13 @@ header {
                 box-shadow 0.3s ease;
 }
 
+.project-card {
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
 .project-card:hover {
-    transform: translateY(-7px);
     box-shadow: 0 16px 32px rgba(10, 27, 65, 0.13);
 }
 
@@ -2295,5 +2300,455 @@ footer {
     .education-card {
         flex-direction: column;
         gap: 1rem;
+    }
+}
+
+
+
+
+/* ==========================================
+   INTERACTIVE FEATURES - PORTFOLIO ADDITIONS
+   Existing design is preserved.
+========================================== */
+
+
+
+/* 2. Theme toggle */
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(36, 25, 133, .2);
+    border-radius: 50%;
+    background: #f0effa;
+    color: #241985;
+    font-size: 21px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(18deg) scale(1.08);
+    background: #241985;
+    color: white;
+}
+
+/* 3. Custom cursor - desktop only */
+.custom-cursor {
+    position: fixed;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #7955e8;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999998;
+    transform: translate(-50%, -50%);
+    transition: width .18s, height .18s, background .18s;
+    display: none;
+}
+
+.custom-cursor.cursor-active {
+    width: 35px;
+    height: 35px;
+    background: rgba(121, 85, 232, .12);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .custom-cursor {
+        display: block;
+    }
+}
+
+/* 4. Developer terminal */
+.terminal-section {
+    padding: 65px 20px;
+    background: #f8f8f8;
+}
+
+.terminal-wrapper {
+    max-width: 850px;
+    margin: auto;
+}
+
+.terminal-heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.terminal-heading > span {
+    color: #7651df;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.terminal-heading h2 {
+    font-size: 35px;
+    color: #0a1b41;
+    margin: 8px 0;
+}
+
+.terminal-heading h2 span {
+    color: #7651df;
+}
+
+.terminal-heading p {
+    color: #666;
+}
+
+.terminal-window {
+    overflow: hidden;
+    border-radius: 13px;
+    background: #101522;
+    color: #e5e9f5;
+    box-shadow: 0 15px 40px rgba(10, 27, 65, .2);
+    border: 1px solid #29334b;
+}
+
+.terminal-topbar {
+    min-height: 43px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #1b2334;
+    color: #b9c2d5;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.terminal-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff625a;
+}
+
+.terminal-dots span:nth-child(2) {
+    background: #ffbd44;
+}
+
+.terminal-dots span:nth-child(3) {
+    background: #00ca70;
+}
+
+.terminal-live {
+    color: #42d99a;
+}
+
+.terminal-body {
+    min-height: 180px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.terminal-body p {
+    margin-bottom: 5px;
+}
+
+.terminal-muted {
+    color: #9ba8bd;
+}
+
+.terminal-command {
+    color: #b69aff;
+}
+
+.terminal-result {
+    color: #7fe0b2;
+}
+
+.terminal-error {
+    color: #ff8b8b;
+}
+
+.terminal-input-line {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 12px 20px;
+    border-top: 1px solid #29334b;
+    font-family: monospace;
+    color: #9d83ff;
+}
+
+.terminal-input-line input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.terminal-input-line input::placeholder {
+    color: #71809b;
+}
+
+.terminal-hint {
+    text-align: center;
+    margin-top: 16px;
+    color: #777;
+    font-size: 13px;
+}
+
+.terminal-hint button {
+    border: none;
+    background: #eeeafa;
+    color: #241985;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.terminal-hint button:hover {
+    background: #241985;
+    color: white;
+}
+
+/* 5. 3D project card tilt */
+.project-card {
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform .18s ease, box-shadow .3s ease;
+}
+
+.project-card > * {
+    transform: translateZ(12px);
+}
+
+/* 6. Animated skill cards */
+.skill-card {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s ease, box-shadow .3s ease;
+}
+
+.skill-card.skill-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(36, 25, 133, .15);
+}
+
+/* 7. Back-to-top button */
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #241985, #984ddf);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: .3s ease;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(36, 25, 133, .25);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+}
+
+/* 8. Dark theme overrides */
+body.dark-mode {
+    background: #101522;
+    color: #e9edf7;
+}
+
+body.dark-mode .navbar {
+    background: #151c2c;
+}
+
+body.dark-mode .navbar .logo,
+body.dark-mode .nav-links li a {
+    color: #edf0fa;
+}
+
+body.dark-mode .about,
+body.dark-mode .project {
+    background: #151c2c;
+}
+
+body.dark-mode .contact,
+body.dark-mode .terminal-section {
+    background: #101522;
+}
+
+body.dark-mode .quick-info h4,
+body.dark-mode .home-left-content h1,
+body.dark-mode .about-right-content h2,
+body.dark-mode .about-right-content h3,
+body.dark-mode .projects-heading h3,
+body.dark-mode .contact h3,
+body.dark-mode .terminal-heading h2 {
+    color: #edf0fa;
+}
+
+body.dark-mode .about-right-content .main-content p,
+body.dark-mode .projects-heading p,
+body.dark-mode .project-card p,
+body.dark-mode .contact-h2,
+body.dark-mode .terminal-heading p,
+body.dark-mode .quick-info ul li {
+    color: #b5bfd2;
+}
+
+body.dark-mode .project-card,
+body.dark-mode .contact-form,
+body.dark-mode .skill-card,
+body.dark-mode .education-card {
+    background: #1d2639;
+    color: #edf0fa;
+    border-color: #303c55;
+}
+
+body.dark-mode .project-card h2,
+body.dark-mode .education-content h4,
+body.dark-mode .education-content h5 {
+    color: #edf0fa;
+}
+
+body.dark-mode .project-tags span,
+body.dark-mode .skill-tags span {
+    background: #30304f;
+    color: #c5b5ff;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea,
+body.dark-mode .input-box input,
+body.dark-mode .input-box textarea {
+    background: #111a2b;
+    color: #edf0fa;
+    border-color: #3b4760;
+}
+
+body.dark-mode .theme-toggle {
+    background: #30304f;
+    color: #f5d77b;
+    border-color: #4a4775;
+}
+
+body.dark-mode .terminal-heading > span {
+    color: #b69aff;
+}
+
+body.dark-mode .terminal-hint {
+    color: #aab4c8;
+}
+
+body.dark-mode .terminal-hint button {
+    background: #30304f;
+    color: #d2c7ff;
+}
+
+body.dark-mode footer {
+    background: #0b101d;
+    color: #e9edf7;
+}
+
+body.dark-mode .section-heading h3,
+body.dark-mode .section-heading p {
+    color: #edf0fa;
+}
+
+body.dark-mode .education-section {
+    background: #101522;
+}
+
+body.dark-mode .education-content p {
+    color: #b5bfd2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 850px) {
+    .theme-toggle {
+        margin-left: auto;
+        margin-right: 18px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .custom-cursor {
+        display: none !important;
+    }
+
+    .terminal-section {
+        padding: 45px 14px;
+    }
+
+    .terminal-heading h2 {
+        font-size: 29px;
+    }
+
+    .terminal-body {
+        padding: 14px;
+    }
+
+    .terminal-input-line {
+        padding: 12px;
+    }
+
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+        width: 43px;
+        height: 43px;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-topbar {
+        font-size: 10px;
+    }
+
+    .terminal-hint button {
+        margin: 3px 1px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .skill-card,
+    .back-to-top,
+    .custom-cursor {
+        transition: none !important;
     }
 }

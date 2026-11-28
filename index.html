@@ -14,6 +14,12 @@
 
 <body onload="loadfunction()">
 
+
+
+
+    <!-- Custom cursor (desktop only) -->
+    <div class="custom-cursor" id="customCursor"></div>
+
     <div class="preloader">
         <div id="loader"></div>
     </div>
@@ -24,6 +30,9 @@
             <div class="logo">
                 <h2>Atharva</h2>
             </div>
+
+
+
 
             <!-- ===================================================================== -->
 
@@ -43,6 +52,11 @@
                 <li><a href="#contact">Contact Us</a></li>
 
             </ul>
+
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode"
+                title="Toggle dark mode">
+                <i class='bx bx-moon'></i>
+            </button>
         </nav>
 
     </header>
@@ -111,6 +125,54 @@
 
     </section>
     <!-- ============================================================================================================================================================================================================================================== -->
+
+
+
+
+    <!-- Interactive Developer Terminal -->
+    <section class="terminal-section" id="terminal">
+        <div class="terminal-wrapper">
+
+            <div class="terminal-heading">
+                <span>BEHIND THE CODE</span>
+                <h2>Developer <span>Terminal</span></h2>
+                <p>Explore my portfolio using simple commands.</p>
+            </div>
+
+            <div class="terminal-window">
+                <div class="terminal-topbar">
+                    <div class="terminal-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span>atharva@portfolio: ~</span>
+                    <span class="terminal-live">● ONLINE</span>
+                </div>
+
+                <div class="terminal-body" id="terminalOutput">
+                    <p class="terminal-muted">Welcome to Atharva's interactive terminal.</p>
+                    <p class="terminal-muted">Type <span class="terminal-command">help</span> to see available commands.
+                    </p>
+                    <p class="terminal-muted">------------------------------------------</p>
+                </div>
+
+                <form id="terminalForm" class="terminal-input-line">
+                    <label for="terminalInput">visitor@portfolio:~$</label>
+                    <input id="terminalInput" type="text" placeholder="Type help..." autocomplete="off"
+                        spellcheck="false">
+                </form>
+            </div>
+
+            <p class="terminal-hint">
+                Try: <button type="button" data-command="about">about</button>
+                <button type="button" data-command="skills">skills</button>
+                <button type="button" data-command="projects">projects</button>
+                <button type="button" data-command="contact">contact</button>
+            </p>
+
+        </div>
+    </section>
+
+
 
     <!-- ======================================================about section============================================================== -->
     <section class="about" id="about">
@@ -637,16 +699,26 @@
     </footer>
 
 
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
 
 
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="script.js"></script>
 
-    <!-- scroll reveal -->
+
+
+    <!-- <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+
+    scroll reveal
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <!-- typed js -->
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    typed js
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> -->
 
 </body>
 
